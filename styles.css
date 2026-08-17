@@ -59,13 +59,18 @@ a.dt-nav-link{padding:8px 11px}
 .dt-nav-link:hover,.dt-nav-item.open .dt-nav-link{color:#fff;background:rgba(79,163,240,.16)}
 .dt-caret{width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-top:-3px;transition:.2s}
 .dt-nav-item.open .dt-caret{transform:rotate(225deg);margin-top:3px}
-.dt-dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:250px;background:var(--navy-card);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:14px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s;z-index:50}
+.dt-dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:250px;background:var(--navy-card);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:16px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s;z-index:50}
 .dt-nav-item:hover .dt-dropdown,.dt-nav-item:focus-within .dt-dropdown,.dt-nav-item.open .dt-dropdown{opacity:1;visibility:visible;transform:none}
-.dt-dropdown-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 22px}
-.dt-dropdown-cols h4{margin:0 0 6px;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--blue-light);font-family:var(--font-body);font-weight:800}
-.dt-dropdown-cols a,.dt-dropdown-list a{font-size:13px;padding:8px 10px;border-radius:10px;color:#dbe6f3;font-weight:500;display:block}
+.dt-dropdown-lg{min-width:440px}
+.dt-dropdown-xl{min-width:620px}
+.dt-dropdown-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 26px}
+.dt-dropdown-cols-3{grid-template-columns:repeat(3,1fr)}
+.dt-dropdown-cols-1{grid-template-columns:1fr}
+.dt-dropdown-cols h4{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--blue-light);font-family:var(--font-body);font-weight:800;padding:0 10px}
+.dt-dropdown-cols a,.dt-dropdown-list a{font-size:12.5px;padding:7px 10px;border-radius:10px;color:#dbe6f3;font-weight:500;display:block;line-height:1.3}
 .dt-dropdown-cols a:hover,.dt-dropdown-list a:hover{background:rgba(79,163,240,.14);color:#fff}
 .dt-dropdown-list{display:grid;gap:2px}
+.dt-dropdown-cat-link{margin-top:4px;font-weight:800!important;color:var(--blue-light)!important}
 .dt-dropdown-all{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;font-weight:800;color:var(--blue-light)}
 .dt-promobar{background:linear-gradient(90deg,var(--blue-2),var(--blue));color:#fff}
 .dt-promobar-row{min-height:40px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:600;gap:6px;flex-wrap:wrap}
@@ -127,7 +132,7 @@ a.dt-nav-link{padding:8px 11px}
 .dt-section{padding:80px 0}
 .dt-section-soft{background:var(--paper-alt)}
 .dt-section-heading{max-width:760px;margin:0 0 34px}
-.dt-section-heading h2{font-size:clamp(26px,3.2vw,38px);margin:10px 0 12px;line-height:1.1}
+.dt-section-heading h2,.dt-section-heading h1{font-size:clamp(26px,3.2vw,38px);margin:10px 0 12px;line-height:1.1}
 .dt-section-heading p{font-size:16px;color:var(--muted);margin:0;font-family:var(--font-body)}
 
 /* device categories: radar-ring icons */
@@ -375,9 +380,9 @@ details[open] .dt-faq-ic:after{transform:translate(-50%,-50%) scaleY(0)}
   .dt-nav.open{display:flex}
   .dt-nav-link{width:100%;justify-content:space-between;padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.08);border-radius:0}
   a.dt-nav-link{justify-content:flex-start}
-  .dt-dropdown{position:static;min-width:0;opacity:1;visibility:visible;transform:none;display:none;box-shadow:none;border:0;background:rgba(255,255,255,.04);padding:8px 4px 10px;margin-bottom:4px;border-radius:var(--r-md)}
+  .dt-dropdown,.dt-dropdown-lg,.dt-dropdown-xl{position:static;min-width:0;opacity:1;visibility:visible;transform:none;display:none;box-shadow:none;border:0;background:rgba(255,255,255,.04);padding:8px 4px 10px;margin-bottom:4px;border-radius:var(--r-md)}
   .dt-nav-item.open .dt-dropdown{display:block}
-  .dt-dropdown-cols{grid-template-columns:1fr}
+  .dt-dropdown-cols,.dt-dropdown-cols-2,.dt-dropdown-cols-3{grid-template-columns:1fr}
   .dt-promobar-row{font-size:12px;padding:8px 0;min-height:auto}
   .dt-hero-fast-badge{position:static!important;transform:none!important;margin:0 0 18px}
   .dt-hero{padding:38px 0 50px}
