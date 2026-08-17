@@ -73,7 +73,7 @@ a.dt-nav-link{padding:8px 11px}
 .dt-promobar-row a{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:2px}
 
 /* fast-repair floating badge */
-.dt-hero-fast-badge{position:static;display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--ink);padding:10px 18px 10px 10px;border-radius:99px;box-shadow:0 16px 34px rgba(0,0,0,.28);margin-bottom:18px}
+.dt-hero-fast-badge{position:static;width:fit-content;display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);padding:10px 18px 10px 10px;border-radius:99px;box-shadow:0 16px 34px rgba(0,0,0,.28);margin:0 0 20px}
 .dt-hero-fast-ic{width:32px;height:32px;flex:none;border-radius:50%;background:#E9F2FD;color:var(--blue-2);display:grid;place-items:center;font-size:15px}
 .dt-hero-fast-badge strong{display:block;font-size:13px;color:var(--blue-2);font-family:var(--font-head);white-space:nowrap}
 .dt-hero-fast-badge small{display:block;font-size:11px;color:var(--muted);font-style:italic}
@@ -105,6 +105,8 @@ a.dt-nav-link{padding:8px 11px}
 .dt-cta img{filter:brightness(0) invert(1)}
 .dt-cta b{display:block;font-size:14.5px}
 .dt-cta small{display:block;font-size:11.5px;margin-top:2px;opacity:.88}
+.dt-cta-line{font-size:13.5px;font-weight:800;line-height:1.5}
+.dt-cta-sep{opacity:.5;margin:0 7px;font-weight:400}
 .dt-cta-wa{background:var(--wa);color:#fff;box-shadow:0 14px 30px rgba(37,211,102,.28)}
 .dt-cta-blue{background:linear-gradient(135deg,var(--blue-2),var(--blue));color:#fff;box-shadow:0 14px 30px rgba(79,163,240,.32)}
 .dt-cta-outline{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.2)}
@@ -299,10 +301,11 @@ details[open] .dt-faq-ic:after{transform:translate(-50%,-50%) scaleY(0)}
 .dt-tile-count{display:inline-flex;align-items:center;font-size:12px;font-weight:800;color:var(--blue-2);background:#E9F2FD;padding:3px 10px;border-radius:99px}
 
 /* individual model cards on category pages */
-.dt-model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
-.dt-model-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:18px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:10px}
+.dt-model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:0}
+.dt-model-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:18px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:10px;transition:transform .25s,box-shadow .25s}
+.dt-model-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
 .dt-model-card h3{margin:0;font-size:15px;color:var(--ink);font-weight:800}
-.dt-model-card a{font-size:12.5px;font-weight:800;color:var(--blue-2);margin-top:auto}
+.dt-model-card span{font-size:12.5px;font-weight:800;color:var(--blue-2);margin-top:auto}
 
 /* hub listing pages */
 .dt-hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
