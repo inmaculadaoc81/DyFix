@@ -1,1 +1,11 @@
-{"name":"dysontech-web","version":"1.0.0","private":true,"type":"module"}
+{
+  "name": "dysontech-dyfix",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://dysontech.es/sitemap.xml
+Sitemap: https://dyfix.eu/sitemap.xml
