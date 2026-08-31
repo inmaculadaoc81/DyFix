@@ -46,3 +46,23 @@ REVISIÓN (fixes aplicados en esta pasada):
   de rapidez ya existente en la web: "Tu Dyson no funciona. Te lo
   devolvemos reparado en 2 horas." Tamaño del H1 aumentado:
   clamp(38-55px) → clamp(46-73px) en escritorio, 39px → 47px en móvil.
+
+REVISIÓN ADICIONAL (checklist unificado de la familia, a petición del cliente):
+- H1 repetía la plantilla "no funciona" usada en varios repos.
+  Reescrito con estructura de una sola frase, imperativa: "Repara tu
+  Dyson en 2 horas, con garantía." (8 palabras).
+- BUG REAL — texto decorativo ".fast-art:before" ("2 h", 150px) sin
+  reducción de tamaño en móvil/tablet, mismo patrón que ThermomixTech
+  y otros repos. Añadida reducción (90px tablet, 56px móvil).
+- Enlace de política de privacidad: la casilla existía pero sin
+  enlace. Añadido a https://kelatos.com/privacy-policy/, en azul y
+  subrayado.
+- El aviso de servicio independiente solo estaba en letra pequeña.
+  Añadida la franja destacada bajo el menú.
+- Añadido "Sábados, domingos y días festivos estamos cerrados" debajo
+  del horario.
+- Botón "Atención Telefónica..." sin icono, a diferencia del de
+  WhatsApp. Añadido.
+- Verificado: schema.org ya usaba correctamente el teléfono de la
+  caja de información; formulario correctamente conectado a
+  /api/contacto. Sin cambios en ninguno de estos.
