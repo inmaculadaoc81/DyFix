@@ -16,6 +16,16 @@ REVISIÓN ADICIONAL (checklist unificado de la familia, a petición del cliente 
   ningún estado hover. Aumentado a border-radius:999px; añadido
   filter:brightness(.88) en wa/pickup y fondo navy sólido con texto
   blanco en el botón de teléfono al pasar el ratón.
+
+REVISIÓN ADICIONAL (a petición del cliente, con captura de pantalla):
+- BUG REAL — la fila de insignias (.badges: "Diagnóstico gratuito",
+  "Presupuesto sin compromiso", "Garantía de 6 meses", "2 h Podemos
+  reparar tu Dyson en 2 h...") estaba colocada justo debajo del H1,
+  dentro del hero, en una fila flex que se envolvía de forma
+  desordenada. Movida fuera del hero, a una franja propia
+  (.badges-strip) justo debajo de la sección hero y antes de "Qué
+  reparamos", con layout en grid: 4 columnas en escritorio/tablet,
+  2 columnas en móvil (≤600px).
 Dominio: https://dyfix.eu/
 Teléfono caja y botones: +34 910 05 48 17
 Diagnóstico: gratuito
