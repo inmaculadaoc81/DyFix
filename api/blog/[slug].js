@@ -1,10 +1,10 @@
 // GET /blog/:slug (vía rewrite de vercel.json) — un artículo publicado, con su texto Markdown convertido a HTML.
-// Mismo X-Forwarded-Host que /api/blog.js: identifica a esta organización (dyfix.eu) ante la API de Kelatos.
+// Mismo ?org= que /api/blog.js: identifica a esta organización ante la API de Kelatos (ver blog.js para el motivo).
 const { marked } = require("marked");
 const { paginaLayout, pagina404, esc } = require("../_blog-layout");
 
 const API_BASE = process.env.KELATOS_BLOG_API || "https://db.affirmatechnology.com/kelatos-api";
-const SITE_HOST = "dyfix.eu";
+const ORG_KEY = "servicio_tecnico_dyson";
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 module.exports = async (req, res) => {
@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
       res.status(400).send("Solicitud no válida");
       return;
     }
-    const r = await fetch(`${API_BASE}/publico/blog/${encodeURIComponent(slug)}`, { headers: { "X-Forwarded-Host": SITE_HOST } });
+    const r = await fetch(`${API_BASE}/publico/blog/${encodeURIComponent(slug)}?org=${ORG_KEY}`);
     if (r.status === 404) {
       res.setHeader("Content-Type", "text/html; charset=utf-8");
       res.status(404).send(pagina404());
