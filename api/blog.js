@@ -1,15 +1,15 @@
 // GET /blog (vía rewrite de vercel.json) — listado de artículos publicados, leídos en vivo de la API de Kelatos.
-// La organización se resuelve en el backend por el dominio: por eso el X-Forwarded-Host es imprescindible (ver
-// resolverOrganizacionPorHost en marketing/organizaciones.js del backend) y tiene que ser SIEMPRE dyfix.eu, el
-// mismo valor guardado en organization_seo_site.url para esta organización.
+// La organización se identifica con ?org=<clave> (la «key» de esta organización en Kelatos): un parámetro de la
+// URL, no una cabecera, porque la API de Kelatos se expone detrás de un túnel de Cloudflare que reescribe
+// X-Forwarded-Host con el suyo propio — ese header no llega intacto desde un sitio externo como este.
 const { paginaLayout, tarjetaArticulo } = require("./_blog-layout");
 
 const API_BASE = process.env.KELATOS_BLOG_API || "https://db.affirmatechnology.com/kelatos-api";
-const SITE_HOST = "dyfix.eu";
+const ORG_KEY = "servicio_tecnico_dyson";
 
 module.exports = async (req, res) => {
   try {
-    const r = await fetch(`${API_BASE}/publico/blog`, { headers: { "X-Forwarded-Host": SITE_HOST } });
+    const r = await fetch(`${API_BASE}/publico/blog?org=${ORG_KEY}`);
     const data = await r.json().catch(() => null);
     const posts = data && data.ok && Array.isArray(data.posts) ? data.posts : [];
     const html = paginaLayout({
