@@ -1,6 +1,16 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/sitemap_index.xml", "destination": "/sitemap.xml", "permanent": true },
+    { "source": "/:wp(.*-sitemap\\d*\\.xml)", "destination": "/sitemap.xml", "permanent": true },
+    { "source": "/blog/:year(\\d{4})/:rest*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/:old(category|tag|author|page)/:rest*", "destination": "/blog", "permanent": true },
+    { "source": "/producto/:rest*", "destination": "/servicios", "permanent": true },
+    { "source": "/categoria-producto/:rest*", "destination": "/servicios", "permanent": true },
+    { "source": "/:p(precios|nuestros-precios|pricing)", "destination": "/servicios", "permanent": true },
+    { "source": "/((?!api/|blog|servicios|assets/|sitemap\\.xml|robots\\.txt|_vercel).+)", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/blog", "destination": "/api/blog" },
     { "source": "/blog/:slug", "destination": "/api/blog/:slug" }
